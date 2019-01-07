@@ -1,0 +1,27 @@
+FROM ubuntu:18.04
+MAINTAINER iamos
+
+# Set ENV
+ENV TZ=Asia/Seoul
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Install packages
+RUN apt-get update
+RUN apt-get install -y zip
+RUN apt-get install -y wget
+
+# Tshock download
+RUN mkdir /terraria
+RUN mkdir /terraria/world
+WORKDIR /terraria
+
+RUN wget http://terraria.org/server/terraria-server-1353.zip
+RUN unzip terraria-server-1353.zip
+RUN rm terraria-server-1353.zip
+RUN chmod +x /terraria/1353/Linux/TerrariaServer.bin.x86_64
+
+# Tshock Settings
+# COPY ./conf/ /tshock/tshock
+
+# RUN Server
+# ENTRYPOINT ["./1353/Linux/TerrariaServer.bin.x86_64"]
