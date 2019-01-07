@@ -1,0 +1,6 @@
+modpath=/terraria/TMod
+autocreate=1
+difficulty=1
+worldpath=/terraria/world
+worldname=small-expert
+world=/terraria/world/small-expert.wld
