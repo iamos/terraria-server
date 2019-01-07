@@ -1,5 +1,5 @@
-world=/terraria/world/medium-expert.wld
 autocreate=2
-worldname=medium-expert
-worldpath=/terraria/world
 difficulty=1
+worldpath=/terraria/world
+worldname=medium-expert
+world=/terraria/world/medium-expert.wld
