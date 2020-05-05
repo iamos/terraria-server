@@ -26,17 +26,18 @@ RUN rm terraria-server-$TERRARIA_VERSION.zip
 WORKDIR /terraria/$TERRARIA_VERSION/Linux
 
 # ADD tModLoader
-RUN wget https://github.com/blushiemagic/tModLoader/releases/download/v0.10.1.5/tModLoader.Linux.v0.10.1.5.zip
-RUN unzip tModLoader.Linux.v0.10.1.5.zip
-RUN rm tModLoader.Linux.v0.10.1.5.zip
+RUN wget https://github.com/tModLoader/tModLoader/releases/download/v0.11.6.2/tModLoader.Linux.v0.11.6.2.tar.gz
+RUN tar zxf tModLoader.Linux.v0.11.6.2.tar.gz
+RUN rm tModLoader.Linux.v0.11.6.2.tar.gz
 RUN chmod +x tModLoaderServer.bin.x86_64
 
 WORKDIR /terraria/TMod
 
 # ADD CalamityMod
-RUN wget http://download2329.mediafire.com/n2u3xdcb58mg/ibu3sa3dsv4z6d5/CalamityModV1.4.1.002.zip
-RUN unzip CalamityModV1.4.1.002.zip
-RUN rm CalamityModV1.4.1.002.zip
+# https://drive.google.com/open?id=1uZLI-zICxqnlzWTnSFIkJq75QLqozjgu
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1uZLI-zICxqnlzWTnSFIkJq75QLqozjgu' -O CalamityMod.zip
+RUN unzip CalamityMod.zip
+RUN rm CalamityMod.zip
 
 # ADD RecipeBrowserMod
 RUN wget -O RecipeBrowser.tmod http://javid.ddns.net/tModLoader/download.php?Down=mods/RecipeBrowser.tmod
