@@ -31,10 +31,9 @@ RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD
     mv TerrariaServer.bin.x86_64 tModLoaderServer.bin.x86_64 && \
     rm *.txt *.jar
 
-WORKDIR /terraria/TMod
 
-# # ADD CalamityMod
-# # https://drive.google.com/open?id=1uZLI-zICxqnlzWTnSFIkJq75QLqozjgu
+# ADD CalamityMod
+# https://drive.google.com/open?id=1uZLI-zICxqnlzWTnSFIkJq75QLqozjgu
 # RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1uZLI-zICxqnlzWTnSFIkJq75QLqozjgu' -O CalamityMod.zip
 # RUN unzip CalamityMod.zip
 # RUN rm CalamityMod.zip
@@ -42,8 +41,8 @@ WORKDIR /terraria/TMod
 # # ADD RecipeBrowserMod
 # RUN wget -O RecipeBrowser.tmod http://javid.ddns.net/tModLoader/download.php?Down=mods/RecipeBrowser.tmod
 
-# # tModServer Settings
-# COPY ./tmodconfig.txt /terraria
+# tModServer Settings
+COPY ./tmodconfig.txt /terraria
 # COPY ./enabled.json /terraria/TMod
 
 
