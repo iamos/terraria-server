@@ -1,6 +1,6 @@
-modpath=/terraria/TMod
+modpath=/terraria/mods
 autocreate=1
 difficulty=1
 worldpath=/terraria/world
-worldname=small-expert
-world=/terraria/world/small-expert.wld
+worldname=medium-expert
+world=/terraria/world/medium-expert.wld
