@@ -39,7 +39,7 @@ RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD
 # RUN rm CalamityMod.zip
 
 # # ADD RecipeBrowserMod
-# RUN wget -O RecipeBrowser.tmod http://javid.ddns.net/tModLoader/download.php?Down=mods/RecipeBrowser.tmod
+# RUN wget -O /terraria/mods/RecipeBrowser.tmod http://javid.ddns.net/tModLoader/download.php?Down=mods/RecipeBrowser.tmod
 
 # tModServer Settings
 COPY ./tmodconfig.txt /terraria
