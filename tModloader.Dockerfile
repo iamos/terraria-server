@@ -43,9 +43,7 @@ RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD
 
 # tModServer Settings
 COPY ./tmodconfig.txt /terraria
-# COPY ./enabled.json /terraria/TMod
 
 
-# # RUN Server
-# WORKDIR /terraria/$TERRARIA_VERSION/Linux
-# ENTRYPOINT ["./tModLoaderServer.bin.x86_64","-config","/terraria/tmodconfig.txt"]
+# RUN Server
+ENTRYPOINT ["./tModLoaderServer.bin.x86_64","-config","/terraria/tmodconfig.txt"]
