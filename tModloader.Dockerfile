@@ -46,4 +46,4 @@ COPY ./tmodconfig.txt /terraria
 
 
 # RUN Server
-# ENTRYPOINT ["./tModLoaderServer.bin.x86_64","-config","/terraria/tmodconfig.txt"]
+ENTRYPOINT ["./tModLoaderServer.bin.x86_64","-config","/terraria/tmodconfig.txt"]
