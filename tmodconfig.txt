@@ -1,5 +1,6 @@
 modpath=/terraria/mods
-autocreate=1
+autocreate=3
 difficulty=1
 worldpath=/terraria/world
 worldname=calamity-marco
+worldpath=/terraria/world/calamity-marco.wld
