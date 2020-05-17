@@ -16,11 +16,12 @@ RUN apt-get install -y zip wget curl
 
 # Tshock download
 RUN mkdir /terraria
-RUN mkdir /terraria/world
-RUN mkdir /terraria/mods
+RUN mkdir /terraria/World
+RUN mkdir /terraria/Mods
+
 WORKDIR /terraria
 
-RUN wget http://terraria.org/server/terraria-server-1353.zip
+RUN wget http://terraria.org/server/terraria-server-$TERRARIA_VERSION.zip
 RUN unzip terraria-server-$TERRARIA_VERSION.zip
 RUN rm terraria-server-$TERRARIA_VERSION.zip
 
@@ -42,7 +43,7 @@ RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD
 # RUN wget -O /terraria/mods/RecipeBrowser.tmod http://javid.ddns.net/tModLoader/download.php?Down=mods/RecipeBrowser.tmod
 
 # tModServer Settings
-COPY ./tmodconfig.txt /terraria
+COPY ./tmodconfig.txt /terraria/tmodconfig.txt
 
 
 # RUN Server
