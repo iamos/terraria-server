@@ -6,7 +6,7 @@ ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ARG TERRARIA_VERSION=1353
-ARG TMOD_VERSION=0.11.6.2
+ARG TMOD_VERSION=0.11.7.4
 
 ARG SERVER_CONF
 
@@ -27,10 +27,16 @@ RUN rm terraria-server-$TERRARIA_VERSION.zip
 
 WORKDIR /terraria/$TERRARIA_VERSION/Linux
 
-RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.Linux.v${TMOD_VERSION}.tar.gz" | tar -xvz && \
-    chmod u+x tModLoaderServer* Terraria TerrariaServer.* && \
+RUN wget https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.Linux.v${TMOD_VERSION}.tar.gz && \
+    tar zxf tModLoader.Linux.v${TMOD_VERSION}.tar.gz && \
+    chmod u+x tModLoaderServer* TerrariaServer.* && \
     mv TerrariaServer.bin.x86_64 tModLoaderServer.bin.x86_64 && \
-    rm *.txt *.jar
+    rm tModLoader.Linux.v${TMOD_VERSION}.tar.gz
+
+#  | tar -xvz && \
+#     chmod u+x tModLoaderServer* Terraria TerrariaServer.* && \
+#     mv TerrariaServer.bin.x86_64 tModLoaderServer.bin.x86_64 && \
+#     rm *.txt *.jar
 
 
 # ADD CalamityMod
