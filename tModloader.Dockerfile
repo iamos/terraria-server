@@ -6,7 +6,7 @@ ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ARG TERRARIA_VERSION=1353
-ARG TMOD_VERSION=0.11.7.4
+ARG TMOD_VERSION=0.11.7.5
 
 ARG SERVER_CONF
 
