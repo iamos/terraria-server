@@ -12,19 +12,17 @@ ARG SERVER_CONF
 RUN apt-get update
 RUN apt-get install -y zip wget
 
-# Tshock download
 RUN mkdir /terraria
 RUN mkdir /terraria/world
 WORKDIR /terraria
 
-# RUN wget https://terraria.org/system/dedicated_servers/archives/000/000/036/original/terraria-server-$TERRARIA_VERSION.zip
-# RUN wget https://www.terraria.org/system/dedicated_servers/archives/000/000/040/original/terraria-server-1410.zip
 RUN wget https://terraria.org/system/dedicated_servers/archives/000/000/042/original/terraria-server-1412.zip
 RUN unzip terraria-server-$TERRARIA_VERSION.zip
 RUN rm terraria-server-$TERRARIA_VERSION.zip
+
 RUN chmod +x /terraria/$TERRARIA_VERSION/Linux/TerrariaServer.bin.x86_64
 
-# Tshock Settings
+# Server Configs
 COPY ./serverconfig.txt /terraria
 
 # RUN Server
