@@ -5,8 +5,8 @@ FROM debian:buster
 ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-ARG TERRARIA_VERSION=1412
-ARG TMOD_VERSION=0.11.8
+ARG TERRARIA_VERSION=1421
+ARG TMOD_VERSION=0.11.8.3
 
 
 # Install packages
@@ -19,7 +19,7 @@ RUN mkdir /terraria/Mods
 
 WORKDIR /terraria
 
-RUN wget https://terraria.org/system/dedicated_servers/archives/000/000/042/original/terraria-server-1412.zip
+RUN wget https://terraria.org/system/dedicated_servers/archives/000/000/044/original/terraria-server-1421.zip
 RUN unzip terraria-server-$TERRARIA_VERSION.zip
 RUN rm terraria-server-$TERRARIA_VERSION.zip
 

@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-ARG TERRARIA_VERSION=1412
+ARG TERRARIA_VERSION=1421
 ARG SERVER_CONF
 
 # Install packages
@@ -16,7 +16,7 @@ RUN mkdir /terraria
 RUN mkdir /terraria/world
 WORKDIR /terraria
 
-RUN wget https://terraria.org/system/dedicated_servers/archives/000/000/042/original/terraria-server-1412.zip
+RUN wget https://terraria.org/system/dedicated_servers/archives/000/000/044/original/terraria-server-1421.zip
 RUN unzip terraria-server-$TERRARIA_VERSION.zip
 RUN rm terraria-server-$TERRARIA_VERSION.zip
 
