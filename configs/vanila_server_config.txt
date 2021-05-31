@@ -1,5 +1,7 @@
 autocreate=3
 difficulty=2
+maxplayers=16
+port=7777
 worldpath=/terraria/world
 worldname=master-large
 world=/terraria/world/master-large.wld

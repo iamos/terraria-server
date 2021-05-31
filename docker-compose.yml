@@ -1,13 +1,18 @@
 # Marco
 version: "3"
 services:
+  base:
+    build:
+      context: .
+      dockerfile: dockerfiles/base.Dockerfile
+    image: "iamos/terraria-base:latest"
   vanilla:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: dockerfiles/vanila.Dockerfile
     image: "iamos/terraria-vanilla:latest"
   tmodloader:
     build:
       context: .
-      dockerfile: tModloader.Dockerfile
+      dockerfile: dockerfiles/tModloader.Dockerfile
     image: "iamos/terraria-tmodloader:latest"
